@@ -15,6 +15,7 @@ dependencies = [
     "PyPDF2",
     "python-dateutil",
     "pytz",
+    "commitizen>=4.9.1",
 ]
 
 [project.scripts]
@@ -22,5 +23,8 @@ menu_parser = "lunch_line.menu_parser:main"
 populate_calendar = "lunch_line.populate_calendar:main"
 
 [build-system]
-requires = ["hatchling", "uv-dynamic-versioning", "uv>=0.6.10"]
-build-backend = "hatchling.build
+requires = ["hatchling", "uv-dynamic-versioning", "uv>=0.8.24"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "uv-dynamic-versioning"
