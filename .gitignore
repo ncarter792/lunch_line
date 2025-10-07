@@ -1,0 +1,27 @@
+# Compiled python modules 
+*.pyc 
+__pycache__/
+
+# Virtual environment
+.venv/
+
+# Google Calendar API credentials
+credentials.json
+token.json
+
+# IDE settings
+.idea/
+.vscode/
+
+# Distribution / packaging 
+build/
+dist/
+
+# Unit test / coverage reports 
+.coverage
+.coverage.*
+.cache
+.pytest_cache 
+
+# MyPy files 
+.mypy_cache/

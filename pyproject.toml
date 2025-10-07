@@ -1,0 +1,26 @@
+[project]
+name = "lunch-line"
+dynamic = ["version"]
+description = "A small Python project to parse school lunch menu PDFs and (optionally) create Google Calendar events so your family can see daily breakfast, lunch, and snack plans at a glance."
+authors = [
+    { name = "Nicole Carter", email = "nikki.carter792@gmail.com" }
+]
+requires-python = ">=3.12"
+readme = "README.md"
+dependencies = [
+    "google-auth",
+    "google-auth-oauthlib",
+    "google-auth-httplib2",
+    "google-api-python-client",
+    "PyPDF2",
+    "python-dateutil",
+    "pytz",
+]
+
+[project.scripts]
+menu_parser = "lunch_line.menu_parser:main"
+populate_calendar = "lunch_line.populate_calendar:main"
+
+[build-system]
+requires = ["hatchling", "uv-dynamic-versioning", "uv>=0.6.10"]
+build-backend = "hatchling.build
