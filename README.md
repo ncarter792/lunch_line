@@ -1,11 +1,13 @@
 # Lunch Line
 
-A small Python project to parse school lunch menu PDFs and (optionally) create Google Calendar events so your family can see daily breakfast, lunch, and snack plans at a glance.
+A Python tool that parses school lunch menu PDFs and populates a shared Google Calendar that parents can subscribe to. This provides an easy way for families to stay informed about daily breakfast, lunch, and snack plans through their personal calendar applications.
 
 ## Features
-- Parse a weekly menu PDF and extract meals per day.
-- Map weekday headers like `Tue (28)` to real calendar dates (e.g., `2024-05-28`).
-- Create all‑day Google Calendar events for Breakfast, Lunch, and PM Snack.
+- Parse a weekly menu PDF and extract meals per day
+- Map weekday headers like `Tue (28)` to real calendar dates (e.g., `2024-05-28`)
+- Create all‑day Google Calendar events for Breakfast, Lunch, and PM Snack
+- Share the calendar with other parents who can subscribe to stay updated
+- Automatic updates when new menu PDFs are processed
 
 Note: The source modules may evolve. This README outlines the setup and typical usage patterns for the project.
 
@@ -13,6 +15,27 @@ Note: The source modules may evolve. This README outlines the setup and typical 
 - Python 3.9+
 - A Google Cloud project with the Google Calendar API enabled
 - OAuth Client ID (Desktop) credentials
+
+## Shared Calendar for Parents
+
+One of the key benefits of this tool is the ability to populate a shared Google Calendar that multiple parents can subscribe to. Here's how it works:
+
+1. **Single Source of Truth**: One parent or school administrator maintains the calendar
+2. **Easy Subscription**: Other parents can subscribe to the calendar using the public URL
+3. **Automatic Updates**: Any updates to the menu are automatically reflected in the calendar
+4. **Platform Agnostic**: Works with any calendar application that supports Google Calendar (iPhone, Android, Outlook, etc.)
+
+To share the calendar with other parents:
+1. After running the script, go to Google Calendar
+2. Find the calendar in "My calendars"
+3. Click the three dots next to it and select "Settings and sharing"
+4. Under "Access permissions," check "Make available to public"
+5. Share the "Public URL to this calendar" with other parents
+
+Parents can then subscribe to this calendar by:
+1. Opening their calendar application
+2. Selecting "Add calendar" → "From URL"
+3. Pasting the public URL
 
 ## Setup
 1. Create and activate a virtual environment
