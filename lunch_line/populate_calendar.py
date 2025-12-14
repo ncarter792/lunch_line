@@ -13,7 +13,7 @@ from menu_parser import run
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-CALENDAR_ID = '565137553ba569fae74073b93a3cfb5baeda885650297c010a7fe8e586f4ae6b@group.calendar.google.com'
+CALENDAR_ID = ['secret'] # TODO - move to Secrets Manager
 
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
 
