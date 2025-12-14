@@ -1,0 +1,7 @@
+name: lunch-line-infra
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+config:
+  gcp:project: lunch-line-471014
