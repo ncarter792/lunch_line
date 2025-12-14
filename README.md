@@ -1,9 +1,9 @@
 # Lunch Line
 
 A Python tool that
-    1) watches for weekly incoming emails containing attachments with school lunch menus
-    2) parses school lunch menu PDFs
-    3) populates a shared Google Calendar that other parents can subscribe to. 
+  1) watches for weekly incoming emails containing attachments with school lunch menus
+  2) parses school lunch menu PDFs
+  3) populates a shared Google Calendar that other parents can subscribe to. 
 
 This provides an easy way for families to stay informed about daily breakfast, lunch, and snack plans through their personal calendar applications.
 
