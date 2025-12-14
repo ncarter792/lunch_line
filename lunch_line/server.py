@@ -16,9 +16,8 @@ provided via environment variables or (still TODO) pulled from Google Secret Man
 import base64
 import json
 import logging
-import os
 
-from typing import Any, Dict
+from typing import Dict
 
 from fastapi import FastAPI, Request
 

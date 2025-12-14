@@ -1,5 +1,5 @@
 import pulumi
-from pulumi import Config, Output
+from pulumi import Config
 import pulumi_gcp as gcp
 
 # Config
