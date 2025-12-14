@@ -5,7 +5,7 @@ A Python tool that
   2) parses school lunch menu PDFs
   3) populates a shared Google Calendar that other parents can subscribe to. 
 
-This provides an easy way for families to stay informed about daily breakfast, lunch, and snack plans through their personal calendar applications.
+This provides an easy way for families to stay informed about daily breakfast, lunch, and snack plans through their personal calendar applications. It leverages Google Cloud Services and Pulumi IaC. 
 
 *Note: This app is currently a work-in-progress prototype. It is not fully wired (yet).*
 
