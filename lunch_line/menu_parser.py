@@ -4,7 +4,6 @@ import sys
 
 from collections import defaultdict
 from datetime import date, timedelta
-from pathlib import Path
 
 import pdfplumber
 
@@ -18,10 +17,6 @@ def extract_meal_data_from_tables(page):
     """Parse a menu table where the first row contains day headers and
     each body cell contains its own section headers (Breakfast, Lunch, PM Snack).
 
-    Strategy:
-    - Use extract_tables to get a 2D list. Assume row 0 has days (Mon..Fri).
-    - For each day column, concatenate all body rows' cells into one text blob.
-    - Inside that blob, detect section headers and collect text until the next header.
     """
     try:
         tables = page.extract_tables()
@@ -58,14 +53,14 @@ def extract_meal_data_from_tables(page):
     return pruned
 
 
-def calculate_week_dates(text):
+def calculate_week_dates(header_text):
     """Calculate the actual dates for the week"""
     # Extract date range from text like "28 July 2025 - 01 August 2025"
     date_pattern = r'(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})\s*-\s*(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})'
-    match = re.search(date_pattern, text)
+    match = re.search(date_pattern, header_text)
     
     if not match:
-        logger.error(f"Extracting menu date range failed: {e}")
+        logger.error(f"Extracting menu date range failed: {header_text}")
         return None
 
     else:
@@ -110,7 +105,7 @@ def map_meal_keys_to_dates(meal_data, start_date, end_date, date_format="%Y-%m-%
         if m:
             d = int(m.group(1))
             dt = day_to_date.get(d)
-            new_key = dt.strftime(date_format) if dt else k
+            new_key = dt.strftime(date_format) if dt else day
         else:
             new_key = day
 

@@ -1,0 +1,35 @@
+name: Lint & Pytest
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install uv
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install uv
+
+      - name: Sync project environment
+        run: |
+          uv sync --all-extras --dev
+
+      - name: Run ruff (lint)
+        run: |
+          uvx ruff check . --output-format=github
+
+      - name: Run tests
+        run: |
+          uv run pytest -q

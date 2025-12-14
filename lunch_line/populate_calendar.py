@@ -108,7 +108,7 @@ def create_calendar_events(calendar_service, meal_data, calendar_id=CALENDAR_ID)
                     body=snack_event
                 ).execute()
         
-        logger.info(f"Successfully created calendar events.")
+        logger.info("Successfully created calendar events.")
         return True
         
     except Exception as e:

@@ -16,6 +16,15 @@ dependencies = [
     "python-dateutil",
     "pytz",
     "commitizen>=4.9.1",
+    "pdfplumber>=0.11.8",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=9.0.2"
+]
+lint = [
+  "ruff"
 ]
 
 [project.scripts]
